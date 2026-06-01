@@ -37,6 +37,11 @@ const App = () => {
       subtitle: 'మీ నిజమైన మార్గం',
       home: 'హోమ్',
     },
+    kn: {
+      title: 'ಮಾರ್ಗದರ್ಶಕ',
+      subtitle: 'ನಿಮ್ಮ ನಿಜವಾದ ಮಾರ್ಗ',
+      home: 'ಮನೆ',
+    },
   };
 
   // Render the current page
