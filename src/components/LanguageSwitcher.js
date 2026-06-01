@@ -10,6 +10,7 @@ const LanguageSwitcher = ({ language, setLanguage }) => {
     { code: 'mr', label: 'मराठी' },
     { code: 'ta', label: 'தமிழ்' },
     { code: 'te', label: 'తెలుగు' },
+    { code: 'kn', label: 'ಕನ್ನಡ' },
   ];
 
   return (
