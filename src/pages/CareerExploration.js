@@ -46,19 +46,58 @@ const CareerExploration = ({ setCurrentPage, language }) => {
       submit: 'मेरा रोडमैप जेनरेट करें',
       roadmapTitle: 'आपका व्यक्तिगत करियर और शैक्षणिक रोडमैप',
     },
+    kn: {
+      title: 'ಕ್ಯಾರಿಯರ್ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಅನ್ವೇಷಣ',
+      step1: 'ಶೈಕ್ಷಣಿಕ ಪ್ರೋಫೈಲ್',
+      step2: 'ವೃತ್ತಿ ಆಕಾಂಕ್ಷೆಗಳು',
+      step3: 'ಅಧ್ಯಯನ ಪ್ರತಿಶ್ರುತಿ',
+      currentGrade: 'ನಿಮ್ಮ ಪ್ರಸ್ತುತ ತರಗತಿ/ಗ್ರೇಡ್ ಎಂದು?',
+      lastResult: 'ನಿಮ್ಮ ಕೊನೆಯ ಶೈಕ್ಷಣಿಕ ಫಲಿತಾಂಶ',
+      subjects: 'ನಿಮ್ಮ ಆಸಕ್ತಿಯ ವಿಷಯಗಳನ್ನು ಆರಿಸಿ',
+      careerGoal: 'ನಿಮ್ಮ ಸ್ವಪ್ನದ ವೃತ್ತಿ ಯಾವುದು?',
+      fields: 'ಆಸಕ್ತಿಯ ಕ್ಷೇತ್ರಗಳು',
+      studyHours: 'ಪ್ರತಿದಿನ ಅಧ್ಯಯನದ ಘಂಟೆಗಳು',
+      next: 'ಮುಂದೆ',
+      back: 'ಹಿಂದೆ',
+      submit: 'ನನ್ನ ರೋಡ್‌ಮ್ಯಾಪ್ ತಿಯರಿಸಿ',
+      roadmapTitle: 'ನಿಮ್ಮ ವ್ಯಕ್ತಿಗತ ವೃತ್ತಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ರೋಡ್‌ಮ್ಯಾಪ್',
+    },
   };
 
   const t = translations[language] || translations['en'];
 
-  // Mock Data for Olympiads and Exams
-  const olympiads = [
-    { name: 'NTSE', description: 'National Talent Search Exam', class: '9-12', subjects: ['Science', 'Math', 'Social Studies', 'Mental Ability'] },
-    { name: 'KVPY', description: 'Kishore Vaigyanik Protsahan Yojana', class: '11-12', subjects: ['Science', 'Math'] },
-    { name: 'IMO', description: 'International Mathematical Olympiad', class: '9-12', subjects: ['Math'] },
-    { name: 'NSO', description: 'National Science Olympiad', class: '9-12', subjects: ['Science'] },
-    { name: 'JEE Main', description: 'Joint Entrance Exam', class: '12', subjects: ['Physics', 'Chemistry', 'Math'] },
-    { name: 'NEET', description: 'Medical Entrance Exam', class: '12', subjects: ['Biology', 'Chemistry', 'Physics'] },
-  ];
+  // Mock Data for Olympiads and Exams - Including Karnataka Exams
+  const getOlympiads = () => {
+    const baseExams = [
+      { name: 'NTSE', description: 'National Talent Search Exam', class: '9-12', subjects: ['Science', 'Math', 'Social Studies', 'Mental Ability'] },
+      { name: 'KVPY', description: 'Kishore Vaigyanik Protsahan Yojana', class: '11-12', subjects: ['Science', 'Math'] },
+      { name: 'IMO', description: 'International Mathematical Olympiad', class: '9-12', subjects: ['Math'] },
+      { name: 'NSO', description: 'National Science Olympiad', class: '9-12', subjects: ['Science'] },
+      { name: 'JEE Main', description: 'Joint Entrance Exam', class: '12', subjects: ['Physics', 'Chemistry', 'Math'] },
+      { name: 'NEET', description: 'Medical Entrance Exam', class: '12', subjects: ['Biology', 'Chemistry', 'Physics'] },
+    ];
+
+    // Add Karnataka-specific exams
+    if (language === 'kn') {
+      const karnatakaExams = [
+        { name: 'ಕಮ್ಯೂನಿಟಿ ಮ್ಯಾಥ್ಸ ಅಲಿಂಪಿಯಾಡ್', description: 'ಕನ್ನಡ ಪ್ರದೇಶದ ಆಮದಿನಾಟ ಪರೀಕ್ಷೆ', class: '9-12', subjects: ['Math'] },
+        { name: 'CET (ಕರ್ನಾಟಕ)', description: 'ಕರ್ನಾಟಕ ಸಾಮಾನ್ಯ ಪ್ರವೇಶ ಪರೀಕ್ಷೆ', class: '12', subjects: ['Physics', 'Chemistry', 'Math', 'Biology'] },
+        { name: 'KCET', description: 'ಕರ್ನಾಟಕ ಸಹ-ಸಂಭವಿ ಎಂಜಿನಿಯರಿಂಗ್ ಪರೀಕ್ಷೆ', class: '12', subjects: ['Physics', 'Chemistry', 'Math'] },
+      ];
+      return [...baseExams, ...karnatakaExams];
+    } else if (language !== 'en') {
+      const karExams = [
+        { name: 'Karnataka Mathematics Olympiad', description: 'Regional math excellence exam', class: '9-12', subjects: ['Math'] },
+        { name: 'CET (Karnataka)', description: 'Karnataka Common Entrance Test', class: '12', subjects: ['Physics', 'Chemistry', 'Math', 'Biology'] },
+        { name: 'KCET', description: 'Karnataka Diploma Engineering Entrance Test', class: '12', subjects: ['Physics', 'Chemistry', 'Math'] },
+      ];
+      return [...baseExams, ...karExams];
+    }
+
+    return baseExams;
+  };
+
+  const olympiads = getOlympiads();
 
   const roadmapMilestones = [
     { month: 'Month 1-2', task: 'Strengthen fundamentals in selected subjects', resources: ['NCERT textbooks', 'Khan Academy', 'YouTube channels'] },
