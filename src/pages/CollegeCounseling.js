@@ -63,11 +63,34 @@ const CollegeCounseling = ({ setCurrentPage, language }) => {
       cutoff: 'कटऑफ रैंक',
       branchWiseCutoffs: 'शाखा-वार कटऑफ',
     },
+    kn: {
+      title: 'ಕಾಲೇಜ್ ಪರಾಮರ್ಶ ಮತ್ತು ಭವಿಷ್ಯದ್ವಾಣಿ',
+      step1: 'ಪರೀಕ್ಷೆಯ ಸ್ಕೋರ್‌ಗಳು',
+      step2: 'ಜನಸಂಖ್ಯಾಶಾಸ್ತ್ರ',
+      step3: 'ಶಾಖೆ ಆಯ್ಕೆ',
+      exam: 'ಪರೀಕ್ಷೆ ಆರಿಸಿ',
+      rank: 'ನಿಮ್ಮ ಶ್ರೇಣಿ/ಸ್ಕೋರ್',
+      percentile: 'ಶೇಕಡಾ',
+      gender: 'ಲಿಂಗ',
+      state: 'ಹೋಮ್ ರಾಜ್ಯ',
+      category: 'ವರ್ಗ/ಜಾತಿ',
+      subCategory: 'ಉಪ-ವರ್ಗ',
+      branch: 'ಆದ್ಯತೆಯ ಶಾಖೆ',
+      predictColleges: 'ನನ್ನ ಕಾಲೇಜುಗಳನ್ನು ಭವಿಷ್ಯದ್ವಾಣಿ ಮಾಡಿ',
+      back: 'ಹಿಂದೆ',
+      next: 'ಮುಂದೆ',
+      submit: 'ನನ್ನ ಭವಿಷ್ಯದ್ವಾಣಿ ಪಡೆಯಿರಿ',
+      eligibleColleges: 'ನಿಮ್ಮ ಅರ್ಹ ಕಾಲೇಜುಗಳು',
+      qualifiedVia: 'ಮೂಲಕ ಅರ್ಹತೆ',
+      fees: 'ವಾರ್ಷಿಕ ಶುಲ್ಕ',
+      cutoff: 'ಕತ್ತರಿ ಶ್ರೇಣಿ',
+      branchWiseCutoffs: 'ಶಾಖೆ-ವಾರ ಕತ್ತರಿಗಳು',
+    },
   };
 
   const t = translations[language] || translations['en'];
 
-  // Mock College Data with realistic info
+  // Mock College Data with Karnataka colleges included
   const mockColleges = [
     {
       id: 1,
@@ -152,6 +175,57 @@ const CollegeCounseling = ({ setCurrentPage, language }) => {
       hostel: 60000,
       established: 2005,
       placement: '88%',
+    },
+    {
+      id: 6,
+      name: 'Visvesvaraya Technological University (VTU)',
+      location: 'Belgaum, Karnataka',
+      fees: 95000,
+      cutoffRank: 'State-based',
+      qualifiedVia: 'Karnataka CET, SC/ST/OBC Quota',
+      branches: {
+        'Computer Science': 5200,
+        'Mechanical Engineering': 6500,
+        'Electrical Engineering': 7200,
+        'Electronics': 8000,
+      },
+      hostel: 50000,
+      established: 1998,
+      placement: '85%',
+    },
+    {
+      id: 7,
+      name: 'Ramaiah Institute of Technology (MSRIT)',
+      location: 'Bangalore, Karnataka',
+      fees: 185000,
+      cutoffRank: 4500,
+      qualifiedVia: 'Karnataka CET, All India Quota',
+      branches: {
+        'Computer Science': 3800,
+        'Mechanical Engineering': 5200,
+        'Electrical Engineering': 5800,
+        'Civil Engineering': 6500,
+      },
+      hostel: 85000,
+      established: 1962,
+      placement: '92%',
+    },
+    {
+      id: 8,
+      name: 'RV Institute of Technology and Management (RVCE)',
+      location: 'Bangalore, Karnataka',
+      fees: 175000,
+      cutoffRank: 5500,
+      qualifiedVia: 'Karnataka CET, AICTE Approved',
+      branches: {
+        'Computer Science': 4200,
+        'Mechanical Engineering': 5800,
+        'Electrical Engineering': 6200,
+        'Electronics': 6800,
+      },
+      hostel: 80000,
+      established: 1995,
+      placement: '90%',
     },
   ];
 
@@ -388,6 +462,7 @@ const CollegeCounseling = ({ setCurrentPage, language }) => {
                   <option value="JEE-Main">JEE Main</option>
                   <option value="NEET">NEET</option>
                   <option value="CUET">CUET</option>
+                  <option value="Karnataka-CET">Karnataka CET</option>
                   <option value="MHT-CET">MHT CET</option>
                   <option value="BITSAT">BITSAT</option>
                 </select>
@@ -506,7 +581,7 @@ const CollegeCounseling = ({ setCurrentPage, language }) => {
               <div>
                 <label className="block text-gray-700 font-semibold mb-3">{t.branch}</label>
                 <div className="space-y-2">
-                  {['Computer Science', 'Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Electronics', 'Chemical Engineering'].map((branch) => (
+                  {['Computer Science', 'Information Technology', 'Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering', 'Electronics'].map((branch) => (
                     <label key={branch} className="flex items-center gap-3 cursor-pointer">
                       <input
                         type="radio"
