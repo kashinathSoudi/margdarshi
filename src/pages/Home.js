@@ -13,17 +13,31 @@ const Home = ({ setCurrentPage, language }) => {
       optionADesc: 'Discover your ideal career path based on your skills, interests, and academic profile',
       optionBDesc: 'Predict eligible colleges and explore opportunities based on your exam scores',
       features: ['AI-Powered Guidance', 'Expert Counseling', 'Real-Time Support'],
+      footer: 'Margdarshi is built specifically for rural students to navigate their academic and career journey with confidence.',
     },
     hi: {
-      title: 'मार्गदर्शी',
+      title: 'मार्गदर्श��',
       subtitle: 'आपका सच्चा रास्ता',
       tagline: 'शैक्षणिक सफलता के लिए आपके सही रास्ते',
-      description: 'ग्रामीण विद्यार्थियों को वो शैक्षणिक और पेशेवर तलाश के लिए सत्विध्ध ही मार्गदर्शन प्रदान करता हूं।',
+      description: 'ग्रामीण विद्यार्थियों को वो शैक्षणिक और पेशेवर तलाश के लिए सत्विधानी कर रहा है',
       optionA: 'करियर और शैक्षणिक विकल्प खोजें',
       optionB: 'कॉलेज सलाह और पूर्वानुमान',
       optionADesc: 'अपने कौशल और शैक्षणिक पत्र के आधार पर अवसरे संभव करियर पाथ की खोज करें',
       optionBDesc: 'अपने परीक्षा कंक और पसंद के आधार पर संबंधित कॉलेज की पथी लघु करें',
       features: ['AI-संचालित मार्गदर्शन', 'अति सलाह', 'तत्काल सहायता'],
+      footer: 'मार्गदर्शी विशेष रूप से ग्रामीण छात्रों के लिए उनके शैक्षणिक और पेशेवर यात्रा को आत्मविश्वास से नेविगेट करने के लिए बनाया गया है।',
+    },
+    kn: {
+      title: 'ಮಾರ್ಗದರ್ಶಕ',
+      subtitle: 'ನಿಮ್ಮ ನಿಜವಾದ ಮಾರ್ಗ',
+      tagline: 'ಶೈಕ್ಷಣಿಕ ಯಶಸ್ಸಿನೆ ನಿಮ್ಮ ನಿಜವಾದ ಮಾರ್ಗ',
+      description: 'ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳನ್ನು ಅವರ ಶೈಕ್ಷಣಿಕ ಮತ್ತು ವೃತ್ತಿಪರ ಯಾತ್ರೆಗೆ ವ್ಯಕ್ತಿಗತಗಳ ಮಾರ್ಗದರ್ಶನದೊಂದಿಗೆ ಅಧಿಕಾರಿಕರಣ',
+      optionA: 'ವೃತ್ತಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಆಯ್ಕೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ',
+      optionB: 'ಕಾಲೇಜ್ ಪರಾಮರ್ಶ ಮತ್ತು ಪূರ್ವಾಭಾಸ',
+      optionADesc: 'ನಿಮ್ಮ ಕೌಶಲ್ಯ, ಆಸಕ್ತಿ ಮತ್ತು ಶೈಕ್ಷಣಿಕ ಪ್ರೋಫೈಲ್‌ನ ಆಧಾರದ ಮೇಲೆ ನಿಮ್ಮ ಆದರ್ಶ ವೃತ್ತಿ ಮಾರ್ಗವನ್ನು ಅನ್ವೇಷಿಸಿ',
+      optionBDesc: 'ನಿಮ್ಮ ಪರೀಕ್ಷೆಯ ಸ್ಕೋರ್‌ಗಳ ಆಧಾರದ ಮೇಲೆ ಅರ್ಹ ಕಾಲೇಜುಗಳನ್ನು ಭವಿಷ್ಯದ್ವಾಣಿ ಮಾಡಿ ಮತ್ತು ಅವಕಾಶಗಳನ್ನು ಅನ್ವೇಷಿಸಿ',
+      features: ['AI-ಸಂಚಾಲಿತ ಮಾರ್ಗದರ್ಶನ', 'ವಿಶೇಷಜ್ಞ ಪರಾಮರ್ಶ', 'ರಿಯಲ್-ಟೈಮ್ ಸಮರ್ಥನ'],
+      footer: 'ಮಾರ್ಗದರ್ಶಕ ಗ್ರಾಮೀಣ ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ತಮ್ಮ ಶೈಕ್ಷಣಿಕ ಮತ್ತು ವೃತ್ತಿಪರ ಯಾತ್ರೆಯನ್ನು ಆತ್ಮವಿಶ್ವಾಸದೊಂದಿಗೆ ನ್ಯಾವಿಗೇಟ್ ಮಾಡಲು ನಿರ್ದಿಷ್ಟವಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.',
     },
   };
 
@@ -94,7 +108,7 @@ const Home = ({ setCurrentPage, language }) => {
         {/* Footer Info */}
         <div className="mt-16 p-8 glass-effect rounded-xl max-w-2xl mx-auto">
           <p className="text-gray-700 text-sm">
-            ✨ <span className="font-semibold">Margdarshi</span> is built specifically for rural students to navigate their academic and career journey with confidence.
+            ✨ <span className="font-semibold">Margdarshi</span> {t.footer}
           </p>
         </div>
       </div>
