@@ -29,6 +29,17 @@ const WellbeingHub = ({ setCurrentPage, language }) => {
       send: 'भेजें',
       typing: 'सलाहकार टाइप कर रहा है...',
     },
+    kn: {
+      title: 'ಸಾರ್ಥಿ ಸಮರ್ಥನ ಕೇಂದ್ರ',
+      subtitle: 'ಮಾನಸಿಕ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಸಹಾಯಕ್ಕೆ ನಿಮ್ಮ ಸುರಕ್ಷಿತ ಸ್ಥಳ',
+      selectIssue: 'ನೀವು ಎದುರಿಸುತ್ತಿರುವ ಸಮಸ್ಯೆಯನ್ನು ಆರಿಸಿ',
+      continue: 'ಮುಂದುವರಿಸಿ',
+      chat: 'ಸಲಹೆದಾರರೊಂದಿಗೆ ಚ್ಯಾಟ್',
+      resources: 'ಉಪಯುಕ್ತ ಸಂಪನ್ಮೂಲಗಳು',
+      back: 'ಹಿಂದೆ',
+      send: 'ಕಳುಹಿಸಿ',
+      typing: 'ಸಲಹೆದಾರ ಟೈಪ್ ಮಾಡುತ್ತಿದ್ದಾರೆ...',
+    },
   };
 
   const t = translations[language] || translations['en'];
